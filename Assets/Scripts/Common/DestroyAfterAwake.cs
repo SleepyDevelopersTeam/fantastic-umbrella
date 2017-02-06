@@ -8,6 +8,6 @@ public class DestroyAfterAwake : MonoBehaviour
 
     private void Awake()
     {
-        Destroy(this.gameObject, delay);
+        Destroy(this.gameObject, Delay);
     }
 }

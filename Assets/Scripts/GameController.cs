@@ -2,15 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
+// TODO
+public enum GUIType { Game, Inventory, Loot, Pause, Shop }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class GameController : MonoBehaviour
+{
+    public GameObject Player;
+    public Pool EnemyPool, BulletPool;
+    public GameObject LevelRoot;
+
+    // TODO:
+    // public Joystick PlayerMover;
+    // public DropdownButton AbilityButton, InventoryItemButton;
+    // public Button PauseButton, OpenInventoryButton;
+    // private Canvas CurrentGUI;
+
+    public void OpenGUI(GUIType which) { }
+
+    public GameController Instance { get; private set; }
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 }
